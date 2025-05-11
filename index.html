@@ -1,312 +1,550 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
 
+  <head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners -->
+    <meta name="description"
+      content="Path Planning using Rapidly Exploring Random Trees (RRT) - An exploration of efficient robot path planning algorithms">
+    <meta property="og:title" content="Path Planning using Rapidly Exploring Random Trees" />
+    <meta property="og:description" content="Exploring efficient robot path planning algorithms using RRT and RRT*" />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image -->
+    <meta property="og:image" content="static/images/rrt_banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:title" content="Path Planning using Rapidly Exploring Random Trees">
+    <meta name="twitter:description" content="Efficient robot path planning algorithms using RRT and RRT*">
+    <meta name="twitter:image" content="static/images/rrt_banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords"
+      content="RRT, RRT*, Path Planning, Robotics, Motion Planning, Rapidly Exploring Random Trees, Algorithm, Robot Navigation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Path Planning Using Rapidly Exploring Random Trees</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+  </head>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-</head>
 <body>
-
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Path Planning Using Rapidly Exploring Random Trees</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">S M Ali Naqvi</a>, </span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Zaid Bin Khalid</a></span>
               </span>
             </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Habib University, Karachi</span>
+
+            </div>
+
+            </a>
+            </span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
+    </div>
+    </div>
+  </section>
+  <!-- Youtube video section with an RRT tutorial -->
+  <section class="hero is-small is-light">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="container">
+        <h2 class="title is-3"></h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/Ob3BIJkQJEw" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              Rapidly Exploring Random Tree (RRT) algorithms provide efficient solutions to the path planning problem by
+              incrementally building a space-filling tree that rapidly explores the configuration space,
+              making them ideal for robot navigation in complex environments.
+            </h2>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
       </div>
     </div>
   </section>
-<!--End paper poster -->
+  <!-- End youtube video -->
+
+  <!-- Teaser section with updated description -->
+  <!-- <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="static/videos/seq01.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Rapidly Exploring Random Tree (RRT) algorithms provide efficient solutions to the path planning problem by
+          incrementally building a space-filling tree that rapidly explores the configuration space,
+          making them ideal for robot navigation in complex environments.
+        </h2>
+      </div>
+    </div>
+  </section> -->
+  <!-- End teaser video -->
+
+  <!-- Paper abstract with RRT content -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Summary</h2>
+          <div class="content has-text-justified">
+            <p>
+              Path planning is a fundamental challenge in robotics, autonomous vehicles, and various other domains
+              requiring navigation through complex environments. This project explores the Rapidly Exploring Random Tree
+              (RRT)
+              algorithm and its optimized variant RRT* as effective solutions to this problem. RRT constructs a tree
+              that
+              efficiently explores the configuration space by randomly sampling points and connecting them to the
+              nearest
+              nodes
+              in the tree. RRT* enhances this by introducing optimality guarantees through a rewiring process that
+              continuously
+              improves path quality. We examine the theoretical foundations, implementation details, and practical
+              applications
+              of these algorithms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Introduction Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Introduction to Path Planning</h2>
+      <div class="content has-text-justified">
+        <p>
+          Path planning is the process of finding a feasible path from a start configuration to a goal configuration
+          while
+          avoiding
+          obstacles. This problem is central to robotics, autonomous vehicles, game development, and many other fields.
+          The challenges in path planning include:
+        </p>
+        <ul>
+          <li><strong>High-dimensional spaces:</strong> Robot configurations often involve many degrees of freedom</li>
+          <li><strong>Complex environments:</strong> Real-world settings contain various obstacles and constraints</li>
+          <li><strong>Computational efficiency:</strong> Solutions must be found quickly, especially for real-time
+            applications</li>
+          <li><strong>Optimality:</strong> Finding not just any path, but ideally the shortest or safest one</li>
+        </ul>
+        <p>
+          Traditional approaches like potential fields, Dijkstra's algorithm, and A* search work well in simple
+          environments but
+          can struggle with high-dimensional spaces. Sampling-based algorithms like Rapidly Exploring Random Trees (RRT)
+          provide
+          an effective alternative by randomly exploring the configuration space rather than discretizing it.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End Introduction Section -->
+
+  <!-- RRT Algorithm Section -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Rapidly Exploring Random Trees (RRT)</h2>
+      <div class="content has-text-justified">
+        <p>
+          The RRT algorithm, introduced by Steven LaValle in 1998, builds a tree that efficiently explores a
+          configuration
+          space
+          by incrementally adding random points. The core steps of the algorithm are:
+        </p>
+        <ol>
+          <li>Initialize the tree with the start configuration</li>
+          <li>Sample a random point in the configuration space</li>
+          <li>Find the nearest node in the tree to the random point</li>
+          <li>Extend the tree from the nearest node toward the random point</li>
+          <li>Check if the extension is collision-free</li>
+          <li>If collision-free, add the new node to the tree</li>
+          <li>Repeat until the goal is reached or a maximum number of iterations is performed</li>
+        </ol>
+        <p>
+          The key advantage of RRT is its ability to efficiently explore high-dimensional spaces without
+          requiring explicit representation of the configuration space. The algorithm is probabilistically
+          complete, meaning it will find a path if one exists, given enough time.
+        </p>
+        <div class="columns">
+          <div class="column">
+            <figure>
+              <img src="static/images/rrt_growth.png" alt="RRT Growth Illustration" />
+              <figcaption>Illustration of RRT tree growth from start configuration toward the goal</figcaption>
+            </figure>
+          </div>
+          <div class="column">
+            <figure>
+              <img src="static/images/rrt_pseudocode.png" alt="RRT Algorithm Pseudocode" />
+              <figcaption>Pseudocode for the basic RRT algorithm</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End RRT Algorithm Section -->
+
+  <!-- RRT* Algorithm Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">RRT* Algorithm</h2>
+      <div class="content has-text-justified">
+        <p>
+          RRT* is an optimized variant of RRT that provides asymptotic optimality guarantees. Introduced by
+          Karaman and Frazzoli in 2011, RRT* extends the basic RRT algorithm with two key improvements:
+        </p>
+        <ol>
+          <li><strong>Connection to lowest-cost parent:</strong> When adding a new node, RRT* connects it to the
+            node within a specified radius that results in the lowest path cost to the new node.</li>
+          <li><strong>Rewiring:</strong> After adding a new node, RRT* checks if nearby nodes could benefit
+            from being rewired through the new node to achieve a lower-cost path from the start.</li>
+        </ol>
+        <p>
+          These improvements enable RRT* to converge to an optimal path as the number of samples increases.
+          While RRT* has higher computational overhead compared to basic RRT, it produces significantly better
+          quality paths, especially in complex environments.
+        </p>
+        <figure>
+          <img src="static/images/rrt_star_comparison.png" alt="RRT vs RRT* Comparison" />
+          <figcaption>Comparison between paths found by RRT (left) and RRT* (right) in the same environment</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <!-- End RRT* Algorithm Section -->
+
+  <!-- Applications Section -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Applications</h2>
+      <div class="content has-text-justified">
+        <p>
+          RRT and RRT* algorithms have found widespread use across numerous domains:
+        </p>
+        <ul>
+          <li><strong>Robotic Manipulation:</strong> Planning arm movements in complex environments</li>
+          <li><strong>Autonomous Vehicles:</strong> Navigation in dynamic traffic scenarios</li>
+          <li><strong>Drone Path Planning:</strong> Finding efficient flight paths while avoiding obstacles</li>
+          <li><strong>Video Games:</strong> Character navigation in complex virtual environments</li>
+          <li><strong>Surgical Robotics:</strong> Planning safe tool trajectories during minimally invasive procedures
+          </li>
+          <li><strong>Space Exploration:</strong> Planning rover movements in unknown terrains</li>
+        </ul>
+        <p>
+          The versatility of RRT-based algorithms makes them suitable for both static and dynamic environments,
+          as well as for systems with complex dynamics and constraints.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End Applications Section -->
+
+  <!-- Interactive Demo Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Interactive RRT Simulator</h2>
+      <div class="content has-text-centered">
+        <p>
+          Experiment with the RRT and RRT* algorithms in this interactive simulator. You can create obstacles,
+          set start and goal positions, and watch how the algorithms build paths in real-time.
+        </p>
+
+        <!-- Embed p5.js RRT simulator -->
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <iframe src="https://editor.p5js.org/embed/BJlG56d4z" width="100%" height="500px" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <p class="mt-4">
+          Alternatively, you can explore the
+          <a href="https://demonstrations.wolfram.com/RapidlyExploringRandomTreeRRTAndRRT/" target="_blank">Wolfram
+            Demonstration</a>
+          of RRT and RRT* algorithms for a more detailed visualization.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End Interactive Demo Section -->
+
+  <!-- Implementation Section -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Implementation Details</h2>
+      <div class="content has-text-justified">
+        <p>
+          Implementing RRT and RRT* algorithms involves several key components:
+        </p>
+
+        <h3 class="title is-5">Data Structures</h3>
+        <ul>
+          <li><strong>Tree representation:</strong> Typically implemented as a graph with nodes and edges</li>
+          <li><strong>Priority queue:</strong> Used for efficient nearest-neighbor queries</li>
+          <li><strong>Collision checker:</strong> To verify if paths are obstacle-free</li>
+        </ul>
+
+        <h3 class="title is-5">Key Implementation Challenges</h3>
+        <ul>
+          <li><strong>Efficient nearest-neighbor search:</strong> KD-trees or ball trees are often used</li>
+          <li><strong>Collision detection:</strong> Fast collision checking is crucial for performance</li>
+          <li><strong>Sampling strategy:</strong> Uniform or biased sampling affects exploration efficiency</li>
+          <li><strong>Goal biasing:</strong> Periodically sampling the goal improves convergence</li>
+        </ul>
+
+        <h3 class="title is-5">Code Snippet: RRT Core Algorithm</h3>
+        <pre><code class="language-python">
+  def RRT(start, goal, obstacle_list, rand_area, expand_dis=3.0, goal_sample_rate=5):
+      """
+      RRT path planning
+      
+      Args:
+          start: Start position
+          goal: Goal position
+          obstacle_list: Obstacle positions
+          rand_area: Random sampling area
+          expand_dis: Distance to expand tree
+          goal_sample_rate: Probability of sampling goal
+          
+      Returns:
+          path: Path from start to goal
+      """
+      tree = [Node(start)]
+      
+      for i in range(MAX_ITER):
+          # Random Sampling
+          if random.randint(0, 100) > goal_sample_rate:
+              rnd = [random.uniform(rand_area[0], rand_area[1]),
+                    random.uniform(rand_area[0], rand_area[1])]
+          else:
+              rnd = goal
+          
+          # Find nearest node
+          nearest_ind = get_nearest_node_index(tree, rnd)
+          nearest_node = tree[nearest_ind]
+          
+          # Steering
+          new_node = steer(nearest_node, rnd, expand_dis)
+          
+          # Check collision
+          if not check_collision(new_node, obstacle_list):
+              tree.append(new_node)
+          
+          # Check goal
+          if distance(tree[-1], goal) <= expand_dis:
+              final_node = steer(tree[-1], goal, expand_dis)
+              if not check_collision(final_node, obstacle_list):
+                  return extract_path(tree, final_node)
+      
+      return None  # No path found
+  </code></pre>
+      </div>
+    </div>
+  </section>
+  <!-- End Implementation Section -->
+
+  <!-- Comparison Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Comparison with Other Algorithms</h2>
+      <div class="content has-text-justified">
+        <p>
+          To understand the advantages and limitations of RRT-based methods, it's important to compare them with other
+          path planning approaches:
+        </p>
+
+        <table class="table is-bordered is-striped is-fullwidth">
+          <thead>
+            <tr>
+              <th>Algorithm</th>
+              <th>Advantages</th>
+              <th>Disadvantages</th>
+              <th>Best Use Cases</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RRT</td>
+              <td>
+                <ul>
+                  <li>Works well in high-dimensional spaces</li>
+                  <li>Probabilistically complete</li>
+                  <li>Relatively simple implementation</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Non-optimal paths</li>
+                  <li>Slow convergence in narrow passages</li>
+                </ul>
+              </td>
+              <td>High-dimensional problems, quick feasible path finding</td>
+            </tr>
+            <tr>
+              <td>RRT*</td>
+              <td>
+                <ul>
+                  <li>Asymptotically optimal</li>
+                  <li>Improves path quality over time</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Higher computational cost</li>
+                  <li>Slower than basic RRT</li>
+                </ul>
+              </td>
+              <td>When path quality matters, with sufficient computation time</td>
+            </tr>
+            <tr>
+              <td>A*</td>
+              <td>
+                <ul>
+                  <li>Optimal path (with admissible heuristic)</li>
+                  <li>Efficient in low dimensions</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Requires discretization</li>
+                  <li>Memory intensive</li>
+                  <li>Struggles in high dimensions</li>
+                </ul>
+              </td>
+              <td>2D/3D grid-based environments</td>
+            </tr>
+            <tr>
+              <td>PRM (Probabilistic Roadmaps)</td>
+              <td>
+                <ul>
+                  <li>Reusable roadmap</li>
+                  <li>Efficient for multiple queries</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Higher preprocessing time</li>
+                  <li>Difficult in changing environments</li>
+                </ul>
+              </td>
+              <td>Multiple queries in static environments</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          RRT and RRT* shine particularly in high-dimensional configuration spaces where traditional grid-based
+          approaches become computationally intractable. Their incremental nature also makes them adaptable to
+          dynamic environments when implemented with appropriate modifications.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End Comparison Section -->
 
 
-<!--BibTex citation -->
+  <!-- Future Work Section -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Future Work and Extensions</h2>
+      <div class="content has-text-justified">
+        <p>
+          The field of RRT-based path planning continues to evolve with several promising research directions:
+        </p>
+        <ul>
+          <li><strong>Informed RRT*:</strong> Using heuristics to bias sampling within an ellipsoidal region</li>
+          <li><strong>Bidirectional RRT:</strong> Growing trees from both start and goal to meet in the middle</li>
+          <li><strong>Adaptive RRT:</strong> Dynamically adjusting parameters based on environment characteristics</li>
+          <li><strong>Anytime RRT:</strong> Providing valid solutions at any time with continuous improvement</li>
+          <li><strong>Dynamic RRT:</strong> Handling moving obstacles and changing environments</li>
+          <li><strong>Parallel RRT:</strong> Leveraging multi-core processors for faster computation</li>
+        </ul>
+        <p>
+          These extensions address various limitations of the basic algorithms and expand their applicability
+          to more complex scenarios, such as dynamic environments, real-time constraints, and systems with
+          differential constraints.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End Future Work Section -->
+
+
+
+
+
+  <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
-<!--End BibTex citation -->
+  </section>
+  <!--End BibTex citation -->
 
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
 
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- Statcounter tracking code -->
 
-    <!-- End of Statcounter Code -->
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-  </body>
-  </html>
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
